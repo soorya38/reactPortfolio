@@ -1,43 +1,40 @@
-import "./projectList.css";
+import "./index.css";
 import { useState } from "react";
 import { initialTabs as tabs } from "./ingredients";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Card() {
+export default function Panel() {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
   return (
-    <div className="project-window">
-      <nav className="project-nav">
-        <ul className="project-ul">
+    <div className="window">
+      <nav className="nav">
+        <ul className="nav-list">
           {tabs.map((item) => (
             <li
               key={item.label}
-              className={`project-li ${item === selectedTab ? "selected" : ""}`}
+              className={`nav-list-item ${item === selectedTab ? "selected" : ""}`}
               onClick={() => setSelectedTab(item)}
-              style={{color: 'black'}}
             >
               {`${item.icon} ${item.label}`}
-              {/* {item === selectedTab ? (
-                <motion.div className="project-underline" layoutId="underline" />
-              ) : null} */}
+              {item === selectedTab && (
+                <motion.div className="underline" layoutId="underline" />
+              )}
             </li>
           ))}
         </ul>
       </nav>
-      <main className="project-main">
+      <main className="main-content">
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedTab ? selectedTab.label : "empty"}
+            className="tab-content"
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -10, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            {selectedTab.text?.map((i) => {
-              return <p style={{color: 'black'}}>{i}</p>;
-            })}
-            {/* {selectedTab ? selectedTab.icon : "😋"} */}
+            {selectedTab ? selectedTab.icon : "😋"}
           </motion.div>
         </AnimatePresence>
       </main>
