@@ -1,11 +1,7 @@
 export const allIngredients = [
-    { icon: "🍅", label: "Tomato" },
-    { icon: "🥬", label: "Lettuce" },
-    { icon: "🧀", label: "Cheese" },
-    { icon: "🥕", label: "Carrot" },
-    { icon: "🍌", label: "Banana" },
-    { icon: "🫐", label: "Blueberries" },
-    { icon: "🥂", label: "Champers?" }
+    { icon: "📊", label: "Skill", text: ["-Data Structures and Algorithms", "-Problem solving"]},
+    { icon: "💾", label: "Language",  text: ["-C/C++", "-Java", "-JavaScript"] },
+    { icon: "📀", label: "Development",  text: ["-HTML", "-CSS", "-BootStrap", "-ReactJs", "-ExpressJs", "-NodeJs", "-MongoDB", "-MySQL", "-Android Studio","-Flutter", "-Unity", "-Unreal Engine", "-DevOps", "-CloudComputing"] }
   ];
   
   const [tomato, lettuce, cheese] = allIngredients;

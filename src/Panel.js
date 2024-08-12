@@ -15,6 +15,7 @@ export default function Panel() {
               key={item.label}
               className={`nav-list-item ${item === selectedTab ? "selected" : ""}`}
               onClick={() => setSelectedTab(item)}
+              style={{color: 'black'}}
             >
               {`${item.icon} ${item.label}`}
               {item === selectedTab && (
@@ -25,6 +26,9 @@ export default function Panel() {
         </ul>
       </nav>
       <main className="main-content">
+        <p style={{color: 'black', listStyle: 'none'}}>
+          {selectedTab.text?.map((i) => {return <li>{i}</li>})}
+        </p>
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedTab ? selectedTab.label : "empty"}
@@ -34,7 +38,7 @@ export default function Panel() {
             exit={{ y: -10, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            {selectedTab ? selectedTab.icon : "😋"}
+          {}
           </motion.div>
         </AnimatePresence>
       </main>
