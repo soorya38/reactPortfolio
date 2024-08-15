@@ -1,6 +1,13 @@
 import "./index.css";
 import { useRef } from "react";
 import { motion, useScroll } from "framer-motion";
+import gameImage from './gameImage.jpeg';
+import arImage from './arImage.jpg'
+import dsaImage from './dsaImage.jpg'
+import invoiceImage from './invoiceImage.png'
+import mouseImage from './mouseImage.jpg';
+import faceImage from './faceImage.png'
+import apartmentImage from './apartmentImage.jpg'
 
 export default function ScrollPanel({ setProjectText }) {
   const ref = useRef(null);
@@ -14,6 +21,16 @@ export default function ScrollPanel({ setProjectText }) {
     { title: 'ALTER MOUSE', text: `A JavaScript web application that transforms a smartphone into a wireless touchpad for the computer. Connect a phone and computer over Wi-Fi for seamless control. Adjust sensitivity and gesture controls to suit preferences. Tech: Node.js, Robot.js` },
     { title: 'APARTMENT LOOKUP', text: `A web application that allows users to upload listings for land and homes available for rent or sale. Clients can search properties by location, view details, and make purchases directly through the site. The platform supports secure payment transfers and includes separate control panels for both admin and user management. Tech: PHP, JavaScript, MySQL` },
     { title: 'ATTENDANCE MANAGEMENT SYSTEM USING FACE RECOGNITION', text: `Utilizing face recognition technology for accurate and efficient tracking, ensuring a secure and streamlined attendance process. Tech: OpenCV, TensorFlow` }
+  ];
+
+  const images = [
+    gameImage,
+    arImage,
+    dsaImage,
+    invoiceImage,
+    mouseImage,
+    apartmentImage,
+    faceImage
   ];
 
   return (
@@ -35,8 +52,9 @@ export default function ScrollPanel({ setProjectText }) {
             className="list-item"
             key={index}
             onClick={() => setProjectText(item.text || item)} 
-            style={{ backgroundImage: `url(${require('./gameImage.jpeg')})` }}
+            style={{ backgroundImage: `url(${images[index]})` }}
           >
+            <button>show more</button>
           </li>
         ))}
       </ul>
