@@ -34,7 +34,8 @@ export default function ScrollPanel({ setProjectText }) {
           <li
             className="list-item"
             key={index}
-            onClick={() => setProjectText(item.text || item)} // Pass only the text if available
+            onClick={() => setProjectText(item.text || item)} 
+            style={{ backgroundImage: `url(${require('./gameImage.jpeg')})` }}
           >
           </li>
         ))}
