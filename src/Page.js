@@ -1,4 +1,3 @@
-import { useScroll } from 'framer-motion';
 import Panel from './Panel';
 import ScrollPanel from './ScrollPanel';
 import { useState } from 'react';

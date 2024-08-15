@@ -348,12 +348,18 @@ img {
   display: flex;
   list-style: none;
   height: 50vh; /* Default height */
-  overflow-x: auto;
+  overflow-x: scroll; 
   padding: 2vw;
-  flex: 0 0 70vw; /* Default width */
-  margin-left: auto;
+  /* flex: 0 0 70vw; */
+   /* Default width */
+  margin-left: 420px;
   margin-right: 2vw;
   box-sizing: border-box;
+  width: 500px;
+  
+}
+.scrollable-list ul{
+  width: 10px;
 }
 
 /* Adjust styles for smaller screens */
